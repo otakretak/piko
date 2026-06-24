@@ -135,11 +135,25 @@ val mediaDataEntity =
             }
 
             // Extraction of media pkid from media class.
-            FanClubContentPreviewInteractorImplFingerprint.method.apply {
+            /*FanClubContentPreviewInteractorImplFingerprint.method.apply {
                 val strIndex = FanClubContentPreviewInteractorImplFingerprint.stringMatches[1].index
 
                 val mediaPkIdMethodName = instructions[indexOfFirstInstruction(strIndex, Opcode.INVOKE_VIRTUAL)].methodExtractor().name
                 GetMediaPkIdExtensionFingerprint.changeFirstString(mediaPkIdMethodName)
+            }*/
+
+            // Extraction of media pkid from media class.
+            FanClubContentPreviewInteractorImplFingerprint.method.apply {
+              if (FanClubContentPreviewInteractorImplFingerprint.stringMatches.size < 2) {
+                  throw PatchException("Failed to find enough string matches in FanClubContentPreviewInteractorImplFingerprint")
+              }
+              val strIndex = FanClubContentPreviewInteractorImplFingerprint.stringMatches[1].index
+              val invokeVirtualIndex = indexOfFirstInstruction(strIndex, Opcode.INVOKE_VIRTUAL)
+              if (invokeVirtualIndex < 0) {
+                  throw PatchException("Failed to find INVOKE_VIRTUAL after string match in FanClubContentPreviewInteractorImplFingerprint")
+              }
+              val mediaPkIdMethodName = instructions[invokeVirtualIndex].methodExtractor().name
+              GetMediaPkIdExtensionFingerprint.changeFirstString(mediaPkIdMethodName)
             }
 
             // Extraction of user data used in extended media class.
