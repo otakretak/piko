@@ -137,14 +137,9 @@ internal object GetAndroidLinkFromMediaObject : Fingerprint(
     definingClass = "Lcom/instagram/profile/fragment/UserDetailFragment;",
 )
 
-/*internal object FanClubContentPreviewInteractorImplFingerprint : Fingerprint(
-    definingClass = "Lcom/instagram/fanclub/preview/impl/FanClubContentPreviewInteractorImpl;",
-    strings = listOf("subscription_exclusive_content_public_preview_select", "creator_igid"),
-)*/
-
 internal object FanClubContentPreviewInteractorImplFingerprint : Fingerprint(
     definingClass = "Lcom/instagram/fanclub/preview/impl/FanClubContentPreviewInteractorImpl;",
-    strings = listOf("container_module", "creator_igid"),
+    strings = listOf("subscription_exclusive_content_public_preview_select", "creator_igid"),
 )
 
 internal object DirectShareTargetRelatedFingerprint : Fingerprint(
