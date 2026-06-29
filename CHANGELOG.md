@@ -1,3 +1,9 @@
+## [3.8.1](https://github.com/otakretak/piko/compare/v3.8.0...v3.8.1) (2026-06-29)
+
+### 🔧 Improvements
+
+* **instagram:** add new experimental options ([4f3a33b](https://github.com/otakretak/piko/commit/4f3a33bda19a65b6d72475a3e42e2f4c40ed106d))
+
 ## [3.8.0](https://github.com/otakretak/piko/compare/v3.7.0...v3.8.0) (2026-06-29)
 
 ### 🐛 Bug Fixes
