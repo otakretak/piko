@@ -36,6 +36,10 @@ internal object ExperimentsValueBuilderFingerprint : Fingerprint(
     strings = listOf("default[after mc dispose]", "default[before mc init]", "override", "server"),
 )
 
-internal object ExperimentsGetMobileConfigSpecifier : Fingerprint(
+/*internal object ExperimentsGetMobileConfigSpecifier : Fingerprint(
     strings = listOf("ExperimentParameter", "Failed to get config key with specifier:%d"),
+)*/
+
+internal object ExperimentsGetMobileConfigSpecifier : Fingerprint(
+    strings = listOf("ExperimentParameter"),
 )
